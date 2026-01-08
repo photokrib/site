@@ -114,9 +114,10 @@ async function loadPhotoGallery() {
 
                 for (const photo of photos) {
                     const img = document.createElement('img');
-                    img.src = `photos/${folder}/${photo}`;
                     img.alt = `${folder} photo`;
                     img.loading = 'lazy';
+                    img.onload = () => img.classList.add('loaded');
+                    img.src = `photos/${folder}/${photo}`;
                     scroll.appendChild(img);
                 }
 
@@ -155,9 +156,10 @@ async function loadPhotoGallery() {
             // Distribute photos across columns
             shuffledPhotos.forEach((item, index) => {
                 const img = document.createElement('img');
-                img.src = `photos/${item.folder}/${item.photo}`;
                 img.alt = `${item.folder} photo`;
                 img.loading = 'lazy';
+                img.onload = () => img.classList.add('loaded');
+                img.src = `photos/${item.folder}/${item.photo}`;
                 columns[index % columnCount].appendChild(img);
             });
 

@@ -242,10 +242,15 @@ main {
     width: auto;
     object-fit: cover;
     flex-shrink: 0;
-    transition: opacity 0.2s ease;
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
 
-.gallery-row-scroll img:hover {
+.gallery-row-scroll img.loaded {
+    opacity: 1;
+}
+
+.gallery-row-scroll img.loaded:hover {
     opacity: 0.85;
 }
 
@@ -267,10 +272,15 @@ main {
     width: 100%;
     height: auto;
     display: block;
-    transition: opacity 0.2s ease;
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
 
-.gallery-column img:hover {
+.gallery-column img.loaded {
+    opacity: 1;
+}
+
+.gallery-column img.loaded:hover {
     opacity: 0.85;
 }
 
