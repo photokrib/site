@@ -1,0 +1,360 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Libre Caslon Text', 'Adobe Caslon Pro', Caslon, Georgia, serif;
+    background-color: #fff;
+    color: #fff;
+    min-height: 100vh;
+    margin-bottom: 1em;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+/* Header & Navigation */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 2.0rem 3.0rem 1.0rem 3.0rem;
+    background-color: #fff;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    flex: 1;
+}
+
+/* Navigation Links (Desktop) */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    justify-content: center;
+    flex: 2;
+}
+
+.nav-links a {
+    font-size: 1rem;
+    transition: opacity 0.2s ease;
+}
+
+.nav-links a:hover {
+    opacity: 0.7;
+}
+
+.nav-links a.active,
+.dropdown a.active {
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: 1.25rem;
+    flex: 1;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    transition: opacity 0.2s ease;
+}
+
+.social-links a:hover {
+    opacity: 0.7;
+}
+
+.social-links svg {
+    width: 20px;
+    height: 20px;
+    fill: #000;
+}
+
+/* Mobile Menu (Hidden on Desktop) */
+.mobile-menu {
+    display: none;
+}
+
+.menu-toggle {
+    font-family: 'Libre Caslon Text', 'Adobe Caslon Pro', Caslon, Georgia, serif;
+    font-size: 1rem;
+    background: none;
+    border: none;
+    color: #000;
+    cursor: pointer;
+    padding: 0.5rem 0;
+    transition: opacity 0.2s ease;
+    z-index: 1001;
+    position: relative;
+}
+
+.menu-toggle:hover {
+    opacity: 0.7;
+}
+
+.dropdown {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+}
+
+.dropdown.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.dropdown li {
+    padding: 0.5rem 0;
+}
+
+.dropdown a {
+    font-size: 1.5rem;
+    display: block;
+}
+
+/* Mobile Social Links */
+.mobile-social {
+    position: absolute;
+    bottom: 3rem;
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.mobile-social a {
+    display: flex;
+    align-items: center;
+}
+
+.mobile-social svg {
+    width: 24px;
+    height: 24px;
+    fill: #000;
+}
+
+/* Main Content */
+main {
+    padding-top: 60px;
+    min-height: 100vh;
+}
+
+.gallery {
+    padding: 1rem 2rem;
+}
+
+/* Page Content (for subpages) */
+.page-content {
+    padding: 1rem 2rem;
+    max-width: 800px;
+}
+
+.page-content h1 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+}
+
+.page-content p {
+    font-size: 1rem;
+    line-height: 1.9;
+    margin-bottom: 2rem;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    padding: 2rem 2rem 2rem;
+}
+
+/* Row-based gallery (dictionary page) */
+.gallery-row {
+    margin-bottom: 2rem;
+}
+
+.gallery-row-title {
+    color: #000;
+    font-size: 1.1rem;
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.gallery-row-scroll {
+    display: flex;
+    gap: 0.75rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.gallery-row-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.gallery-row-scroll img {
+    height: 45vh;
+    width: auto;
+    object-fit: cover;
+    flex-shrink: 0;
+    transition: opacity 0.2s ease;
+}
+
+.gallery-row-scroll img:hover {
+    opacity: 0.85;
+}
+
+/* Column-based gallery (home page) */
+.gallery-columns {
+    display: flex;
+    gap: 0.75rem;
+    width: 100%;
+}
+
+.gallery-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.gallery-column img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: opacity 0.2s ease;
+}
+
+.gallery-column img:hover {
+    opacity: 0.85;
+}
+
+/* Lightbox */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.95);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-family: 'Libre Caslon Text', Georgia, serif;
+    font-size: 1.25rem;
+    background: none;
+    border: none;
+    color: #000;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: opacity 0.2s ease;
+}
+
+.lightbox-close:hover {
+    opacity: 0.6;
+}
+
+.gallery-column img,
+.gallery-row-scroll img {
+    cursor: zoom-in;
+}
+
+/* Responsive */
+@media (max-width: 850px) {
+    header {
+        padding: 1.0rem;
+    }
+
+    .gallery,
+    .page-content {
+        padding: 1.0rem;
+    }
+
+    .photo-gallery {
+        padding: 0 1.5rem 1.5rem;
+    }
+
+    .gallery-row-scroll img {
+        height: 25vh;
+    }
+
+    .site-title {
+        font-size: 1.1rem;
+    }
+
+    .nav-links,
+    .social-links {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+}
